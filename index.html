@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ferhat Baş — Lead / Senior Full-Stack Engineer</title>
+<meta name="description" content="Lead full-stack engineer and architect. 25 years taking products from analysis to production.">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#16202a; --muted:#5b6672; --line:#dcdad2;
+  --accent:#0b6e6e; --accent-soft:#e2f0ef; --shot:#e9e7df;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0f1519; --surface:#172026; --ink:#e8ecee; --muted:#98a4ad; --line:#27333b;
+    --accent:#4cc2bd; --accent-soft:#16302f; --shot:#1e2a31; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:20px;align-items:center;height:54px;overflow-x:auto;white-space:nowrap}
+nav strong{margin-right:auto;letter-spacing:.02em}
+nav a{color:var(--muted);font-size:14px}
+header{padding:72px 0 40px}
+.eyebrow{font:600 12px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.05;margin:14px 0 18px;letter-spacing:-.02em;text-wrap:balance}
+.lede{font-size:19px;color:var(--muted);max-width:62ch;margin:0 0 26px}
+.hero{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.hero>*{min-width:0}
+.portrait{order:2;width:150px;height:auto;aspect-ratio:258/355}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.portrait{order:-1;width:104px;height:auto}}
+.stack{font-size:15px;color:var(--muted);margin:-10px 0 26px;max-width:72ch}
+.stack b{color:var(--ink);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{padding:10px 18px;border-radius:8px;border:1px solid var(--line);color:var(--ink);font-weight:600;font-size:15px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.btn:hover{text-decoration:none;border-color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:44px}
+.stats div{background:var(--surface);padding:18px 20px}
+.stats b{display:block;font-size:28px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stats span{font-size:13px;color:var(--muted)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:28px;letter-spacing:-.01em;margin:8px 0 6px}
+.sub{color:var(--muted);max-width:64ch;margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.shot{position:relative;aspect-ratio:16/9;background:var(--shot);display:grid;place-items:center;
+  color:var(--muted);font:12px ui-monospace,Menlo,Consolas,monospace}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.body h3{margin:0;font-size:18px}
+.status{font:600 11px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.body p{margin:0;color:var(--muted);font-size:15px}
+.repo{font-size:13px;margin:6px 0 0;color:var(--muted)}.repo a{color:var(--accent);font-weight:600}.repo a:hover{text-decoration:underline}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.tags span{font-size:12px;padding:3px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.links{display:flex;gap:14px;font-size:14px;font-weight:600}
+.diagram svg{position:absolute;inset:0;width:100%;height:100%}
+.diagram .bx,.arch .bx{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+.diagram .ac,.arch .ac{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5}
+.diagram .t,.arch .t{fill:var(--ink);font:600 14px system-ui,sans-serif}
+.diagram .m,.arch .m{fill:var(--muted);font:12px system-ui,sans-serif}
+.diagram .ln,.arch .ln{stroke:var(--accent);stroke-width:1.6;fill:none}
+.diagram .ds,.arch .ds{stroke-dasharray:5 4}
+.diagram .ah,.arch .ah{fill:var(--accent)}
+.mlabel{grid-column:1/-1;font:600 11px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.modules{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.modules div{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:14px;line-height:1.45}
+.modules b{display:block;color:var(--ink);margin-bottom:2px}
+.modules span{color:var(--muted)}
+.arch{grid-column:1/-1}
+.arch svg{width:100%;height:auto;display:block;background:var(--shot);border:1px solid var(--line);border-radius:8px}
+.arch-sq svg{max-width:640px;margin:0 auto}
+.screens{grid-column:1/-1;position:relative}
+.track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;padding-bottom:4px}
+.track figure{flex:0 0 min(72%,460px);margin:0;scroll-snap-align:start}
+.track a{display:block;aspect-ratio:16/9;background:var(--shot);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.track img{width:100%;height:100%;object-fit:contain;display:block}
+.track figcaption{font-size:13px;color:var(--muted);margin-top:5px}
+.screens button{position:absolute;top:calc(50% - 30px);width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-size:20px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.screens .prev{left:-10px}.screens .next{right:-10px}
+.feature{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px 28px;align-items:center;background:var(--surface);
+  border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:20px}
+.feature>*{min-width:0}
+.feature .shot{border-radius:8px;overflow:hidden}
+.feature h3{margin:8px 0 4px;font-size:21px}
+.feature>div>p{margin:0;color:var(--muted)}
+.scale{font:600 13px ui-monospace,Menlo,Consolas,monospace;color:var(--accent);margin:10px 0 12px}
+.feature ul{margin:10px 0 14px;padding-left:18px;color:var(--muted);font-size:15px}
+.feature li{margin:4px 0}
+.pipeline{font:13px/1.7 ui-monospace,Menlo,Consolas,monospace;color:var(--ink);background:var(--accent-soft);
+  padding:10px 12px;border-radius:8px;overflow-x:auto;white-space:nowrap}
+.timeline{display:grid;gap:18px}
+.job{display:grid;grid-template-columns:150px 1fr;gap:16px}
+.job time{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums;padding-top:2px}
+.job h3{margin:0 0 4px;font-size:17px}
+.job p{margin:0;color:var(--muted);font-size:15px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.skills h3{margin:0 0 6px;font-size:14px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}
+.skills p{margin:0;color:var(--muted);font-size:15px}
+footer{padding:48px 0 64px;border-top:1px solid var(--line)}
+footer h2{margin-top:0}
+footer small{display:block;margin-top:28px;color:var(--muted)}
+@media (max-width:720px){
+  header{padding:48px 0 28px}
+  .feature{grid-template-columns:1fr;padding:18px}
+  .job{grid-template-columns:1fr;gap:2px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <strong>Ferhat Baş</strong>
+  <a href="#projects">Products</a>
+  <a href="#ai">AI features</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+</div></nav>
+
+<header class="wrap"><div class="hero">
+<img class="portrait" src="img/ferhat.png" alt="Ferhat Baş" width="150" height="206">
+<div>
+  <div class="eyebrow">Lead / Senior Full-Stack Engineer · İzmir, Turkey · Remote</div>
+  <h1>I build software products end to end, and I stay around after release.</h1>
+  <p class="lede">Twenty-five years as a full-stack engineer and lead, most of them on clinical systems where a wrong value reaches a patient the same day. I sit with customers on requirements, model the data before the screens, write the code, and answer for it in production. I lead when a team needs it and still code every day.</p>
+  <p class="stack"><b>Main stack:</b> .NET / C#, React / Next.js, Node.js, TypeScript, PHP · <b>Databases:</b> MSSQL, MySQL, MongoDB, Oracle · <b>Real-time:</b> WebSocket, SignalR, TCP/IP binary protocols</p>
+  <div class="cta">
+    <a class="btn primary" href="mailto:ferhatbas1981@gmail.com">Get in touch</a>
+    <!-- TODO: add the CV PDF to this folder -->
+    <a class="btn" href="https://github.com/ferhatbas">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/ferhat-bas/">LinkedIn</a>
+    <a class="btn" href="Ferhat_Bas_CV_EN.pdf">Download CV</a>
+  </div>
+  </div>
+</div></header>
+
+<section id="projects"><div class="wrap">
+  <div class="eyebrow">Products</div>
+  <h2>Products I designed and delivered</h2>
+  <p class="sub">Screens from employer projects use demo data. Architecture notes are available on request.</p>
+  <div class="feature">
+    <div class="shot">img/carbon-dashboard.png<img src="img/carbon-dashboard.png" alt="Carbon HMS — dashboard" onerror="this.remove()"></div>
+    <div>
+      <span class="status">2026 – present · Independent product · Screens use demo data</span>
+      <h3>Carbon HMS — multi-specialty clinic management platform</h3>
+      <p>A generic healthcare application built to serve different disciplines on one shared core: hospital, polyclinic, private practice, dialysis, dental and aesthetics each get their own specialty module on top of common patient, clinical, pharmacy, finance, document and identity modules.</p>
+      <p class="repo">Open source · <a href="https://github.com/ferhatbas/multi-identity-app" target="_blank" rel="noopener">github.com/ferhatbas/multi-identity-app ↗</a> — the identity, organisation and access-control layer: one API contract, one schema, one JWT format (.NET API + React console)</p>
+      <div class="tags"><span>.NET 10</span><span>EF Core</span><span>MSSQL</span><span>JWT</span><span>React 19</span><span>PrimeReact</span><span>Tailwind</span><span>MongoDB</span><span>Docker</span><span>Azure</span></div>
+    </div>
+    <div class="mlabel">Modules</div>
+    <div class="modules"><div><b>Specialties</b><span>hospital, polyclinic, private practice, dialysis, dental, aesthetics</span></div><div><b>Patients and appointments</b><span>patient records, appointments, questionnaires, incidents</span></div><div><b>Clinical</b><span>examination, laboratory, inpatient, nursing, monitoring</span></div><div><b>Pharmacy and inventory</b><span>pharmacy, stock, purchasing</span></div><div><b>Finance and documents</b><span>finance, cash book, document management, reporting, data import</span></div><div><b>Communication</b><span>in-app messaging, WhatsApp, notifications, presence</span></div><div><b>Platform</b><span>multi-tenant identity (open source: multi-identity-app), roles and security, audit trail, menu studio, localization</span></div><div><b>Alfred AI</b><span>embedded voice assistant for clinicians</span></div></div>
+    <div class="mlabel">Architecture</div>
+    <div class="arch arch-sq"><svg viewBox="0 0 640 300" role="img" aria-label="Carbon HMS architecture" xmlns="http://www.w3.org/2000/svg"><defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs><rect class="bx" x="20" y="60" width="150" height="60" rx="8"/><text class="t" x="95" y="87" text-anchor="middle">React web</text><text class="m" x="95" y="105" text-anchor="middle">PrimeReact · Tailwind</text><rect class="bx" x="20" y="180" width="150" height="60" rx="8"/><text class="t" x="95" y="207" text-anchor="middle">Alfred AI widget</text><text class="m" x="95" y="225" text-anchor="middle">Gemini Live</text><rect class="ac" x="235" y="75" width="170" height="150" rx="8"/><text class="t" x="320" y="118" text-anchor="middle">.NET 10 API</text><text class="m" x="320" y="138" text-anchor="middle">JWT · EF Core</text><text class="m" x="320" y="155" text-anchor="middle">specialty modules</text><text class="m" x="320" y="172" text-anchor="middle">shared core modules</text><text class="m" x="320" y="189" text-anchor="middle">row-based multi-tenancy</text><rect class="bx" x="470" y="60" width="150" height="60" rx="8"/><text class="t" x="545" y="87" text-anchor="middle">MSSQL</text><text class="m" x="545" y="105" text-anchor="middle">single DB, tenant filter</text><rect class="bx" x="470" y="180" width="150" height="60" rx="8"/><text class="t" x="545" y="207" text-anchor="middle">OpenAPI codegen</text><text class="m" x="545" y="225" text-anchor="middle">TS types for the client</text><line class="ln" x1="170" y1="90" x2="235" y2="120" marker-end="url(#a)"/><line class="ln" x1="170" y1="210" x2="235" y2="180" marker-end="url(#a)"/><line class="ln" x1="405" y1="120" x2="470" y2="90" marker-end="url(#a)"/><line class="ln ds" x1="405" y1="180" x2="470" y2="210" marker-end="url(#a)"/><text class="m" x="320" y="262" text-anchor="middle">clients talk to one API; each discipline is a module on the same core</text></svg></div>
+    <div class="mlabel">Screens</div>
+    <div class="screens"><div class="track"><figure><a href="img/carbon-invoices.png" target="_blank" rel="noopener"><img src="img/carbon-invoices.png" alt="Invoices: filters, aging and collection status per invoice"></a><figcaption>Invoices: filters, aging and collection status per invoice</figcaption></figure><figure><a href="img/carbon-dunning.png" target="_blank" rel="noopener"><img src="img/carbon-dunning.png" alt="Dunning: open receivables with age, level and reminder status"></a><figcaption>Dunning: open receivables with age, level and reminder status</figcaption></figure><figure><a href="img/carbon-cashbook.png" target="_blank" rel="noopener"><img src="img/carbon-cashbook.png" alt="Cash book: cash, POS and bank balances with daily entries"></a><figcaption>Cash book: cash, POS and bank balances with daily entries</figcaption></figure><figure><a href="img/carbon-sales.png" target="_blank" rel="noopener"><img src="img/carbon-sales.png" alt="Package sales and installments"></a><figcaption>Package sales and installments</figcaption></figure><figure><a href="img/carbon-patients.png" target="_blank" rel="noopener"><img src="img/carbon-patients.png" alt="Patient records"></a><figcaption>Patient records</figcaption></figure><figure><a href="img/carbon-access.png" target="_blank" rel="noopener"><img src="img/carbon-access.png" alt="Authorization studio: menus, roles, permissions and the matrix"></a><figcaption>Authorization studio: menus, roles, permissions and the matrix</figcaption></figure><figure><a href="img/carbon-dashmgr.png" target="_blank" rel="noopener"><img src="img/carbon-dashmgr.png" alt="Dashboard manager: widget layouts per application, tenant, role or user"></a><figcaption>Dashboard manager: widget layouts per application, tenant, role or user</figcaption></figure></div><button class="prev" aria-label="Previous">‹</button><button class="next" aria-label="Next">›</button></div>
+  </div>
+  <div class="feature">
+    <div class="shot">img/dsys-hms.png<img src="img/dsys-hms.png" alt="D.Sys HMS — hospital information system" onerror="this.remove()"></div>
+    <div>
+      <span class="status">2025 – 2026 · Global · Screens use demo data</span>
+      <h3>D.Sys HMS — hospital information system</h3>
+      <p>Country-neutral, multi-tenant HIS. Country-specific rules live in edge adapters, so the core stays the same for every market.</p>
+      <div class="tags"><span>.NET 10</span><span>DDD</span><span>EF Core</span><span>MSSQL</span><span>Next.js 16</span><span>React 19</span><span>PrimeReact</span><span>FHIR R4</span><span>Docker</span></div>
+    </div>
+    <div class="mlabel">Modules</div>
+    <div class="modules"><div><b>Front desk</b><span>scheduled and walk-in admission, appointments, new patient registration</span></div><div><b>Clinical workflow</b><span>clinical queue, ER triage, doctor panel, examination, service entry</span></div><div><b>Diagnostics and results</b><span>laboratory, radiology, imaging worklist, clinical results, critical-value alerts</span></div><div><b>Inpatient care</b><span>bed board, ward board, discharge queue, nursing tasks, order management</span></div><div><b>Revenue cycle (BillFlow)</b><span>billing, insurance claims, general-ledger export, bank reconciliation</span></div><div><b>Platform</b><span>FHIR R4 interoperability, country-specific rules isolated in edge adapters, multi-tenant core, JWT with role-based access</span></div></div>
+    <div class="mlabel">Screens</div>
+    <div class="screens"><div class="track"><figure><a href="img/hms-doctor-panel.png" target="_blank" rel="noopener"><img src="img/hms-doctor-panel.png" alt="Doctor panel: today's admissions with queue, status and examination state"></a><figcaption>Doctor panel: today's admissions with queue, status and examination state</figcaption></figure><figure><a href="img/hms-examination.png" target="_blank" rel="noopener"><img src="img/hms-examination.png" alt="Examination: SOAP form with vitals, allergies and prior visits alongside"></a><figcaption>Examination: SOAP form with vitals, allergies and prior visits alongside</figcaption></figure><figure><a href="img/hms-queue.png" target="_blank" rel="noopener"><img src="img/hms-queue.png" alt="Clinical waiting queue with priority and call-in"></a><figcaption>Clinical waiting queue with priority and call-in</figcaption></figure><figure><a href="img/hms-bed-board.png" target="_blank" rel="noopener"><img src="img/hms-bed-board.png" alt="Bed board: rooms and beds per ward with occupancy"></a><figcaption>Bed board: rooms and beds per ward with occupancy</figcaption></figure><figure><a href="img/hms-patients.png" target="_blank" rel="noopener"><img src="img/hms-patients.png" alt="Patient records"></a><figcaption>Patient records</figcaption></figure><figure><a href="img/hms-invoices.png" target="_blank" rel="noopener"><img src="img/hms-invoices.png" alt="Invoice list (BillFlow): status, net amount and patient share"></a><figcaption>Invoice list (BillFlow): status, net amount and patient share</figcaption></figure><figure><a href="img/hms-pharmacy.png" target="_blank" rel="noopener"><img src="img/hms-pharmacy.png" alt="Pharmacy stock: batches, expiry, reserved and available quantities"></a><figcaption>Pharmacy stock: batches, expiry, reserved and available quantities</figcaption></figure></div><button class="prev" aria-label="Previous">‹</button><button class="next" aria-label="Next">›</button></div>
+  </div>
+  <div class="feature">
+    <div class="shot">img/dsys-pcs.png<img src="img/dsys-pcs.png" alt="D.Sys — dialysis information system" onerror="this.remove()"></div>
+    <div>
+      <span class="status">2020 – 2024 · Qatar, North Macedonia</span>
+      <h3>D.Sys — dialysis information system</h3>
+      <p>Dialysis information system delivered abroad, in Qatar and North Macedonia. The North Macedonia version runs together with the RTMon platform below.</p>
+      <div class="tags"><span>JavaScript</span><span>jQuery</span><span>WebSocket</span><span>SignalR</span><span>React</span><span>SOAP</span><span>MSSQL</span><span>Doctrine ORM</span></div>
+    </div>
+    <div class="mlabel">Modules</div>
+    <div class="modules"><div><b>Daily treatment</b><span>session records, weights, ultrafiltration, machine settings</span></div><div><b>Prescriptions</b><span>dialysis prescription and treatment planning</span></div><div><b>Laboratory</b><span>monthly follow-up with trend charts and side-by-side comparison</span></div><div><b>Wound assessment</b><span>assessment records and follow-up</span></div><div><b>Surveys</b><span>patient questionnaires</span></div><div><b>RTMon integration</b><span>live machine data inside the treatment screen (North Macedonia edition)</span></div></div>
+    <div class="mlabel">Screens · Qatar edition</div>
+    <div class="screens"><div class="track"><figure><a href="img/dsys-q-monthly-check.png" target="_blank" rel="noopener"><img src="img/dsys-q-monthly-check.png" alt="Monthly check: lab results, session info and applied prescription"></a><figcaption>Monthly check: lab results, session info and applied prescription</figcaption></figure><figure><a href="img/dsys-pcs-prescription.png" target="_blank" rel="noopener"><img src="img/dsys-pcs-prescription.png" alt="Dialysis prescription: session, vascular access and machine settings"></a><figcaption>Dialysis prescription: session, vascular access and machine settings</figcaption></figure><figure><a href="img/dsys-q-kpi.png" target="_blank" rel="noopener"><img src="img/dsys-q-kpi.png" alt="KPI report: monthly session counts and hemoglobin distribution"></a><figcaption>KPI report: monthly session counts and hemoglobin distribution</figcaption></figure><figure><a href="img/dsys-pcs-report.png" target="_blank" rel="noopener"><img src="img/dsys-pcs-report.png" alt="Monthly medical report"></a><figcaption>Monthly medical report</figcaption></figure><figure><a href="img/dsys-pcs-ckd.png" target="_blank" rel="noopener"><img src="img/dsys-pcs-ckd.png" alt="Patient status: CKD reason"></a><figcaption>Patient status: CKD reason</figcaption></figure></div><button class="prev" aria-label="Previous">‹</button><button class="next" aria-label="Next">›</button></div>
+    <div class="mlabel">Screens · North Macedonia edition</div>
+    <div class="screens"><div class="track"><figure><a href="img/dsys-mk-daily-treatment.png" target="_blank" rel="noopener"><img src="img/dsys-mk-daily-treatment.png" alt="Daily treatment, step 3: vitals captured during the session"></a><figcaption>Daily treatment, step 3: vitals captured during the session</figcaption></figure><figure><a href="img/dsys-mk-daily-medication.png" target="_blank" rel="noopener"><img src="img/dsys-mk-daily-medication.png" alt="Daily treatment with the medication list for the session"></a><figcaption>Daily treatment with the medication list for the session</figcaption></figure><figure><a href="img/dsys-mk-prescription.png" target="_blank" rel="noopener"><img src="img/dsys-mk-prescription.png" alt="Dialysis prescription and session start"></a><figcaption>Dialysis prescription and session start</figcaption></figure><figure><a href="img/dsys-mk-medicine.png" target="_blank" rel="noopener"><img src="img/dsys-mk-medicine.png" alt="Medicine prescription with the lab panel alongside"></a><figcaption>Medicine prescription with the lab panel alongside</figcaption></figure><figure><a href="img/dsys-mk-session-plan.png" target="_blank" rel="noopener"><img src="img/dsys-mk-session-plan.png" alt="Weekly session plan by hall and shift"></a><figcaption>Weekly session plan by hall and shift</figcaption></figure></div><button class="prev" aria-label="Previous">‹</button><button class="next" aria-label="Next">›</button></div>
+  </div>
+  <div class="feature">
+    <div class="shot">img/rtmon.png<img src="img/rtmon.png" alt="RTMon — dialysis machine integration platform" onerror="this.remove()"></div>
+    <div>
+      <span class="status">2025 · Real-time</span>
+      <h3>RTMon — dialysis machine integration platform</h3>
+      <p>A TCP server that speaks the binary protocols of several dialysis machine brands and streams live treatment data to the clinic screen.</p>
+      <div class="tags"><span>C#</span><span>TCP/IP</span><span>Binary protocols</span><span>WebSocket</span><span>MongoDB</span><span>React</span></div>
+    </div>
+    <div class="mlabel">Modules</div>
+    <div class="modules"><div><b>TCP server</b><span>ingests binary protocols from multiple machine brands</span></div><div><b>Raw archive</b><span>every frame logged to MongoDB</span></div><div><b>Live streaming</b><span>WebSocket / SignalR with token-based authentication</span></div><div><b>Viewer (React)</b><span>live parameters and session view per machine</span></div><div><b>Parameter management</b><span>per-machine parameter sets</span></div></div>
+    <div class="mlabel">Architecture</div>
+    <div class="arch"><svg viewBox="0 0 900 320" role="img" aria-label="RTMon architecture" xmlns="http://www.w3.org/2000/svg"><defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs><rect class="bx" x="20" y="70" width="160" height="110" rx="8"/><text class="t" x="100.0" y="108.0" text-anchor="middle">Dialysis machines</text><text class="m" x="100.0" y="126.0" text-anchor="middle">several brands</text><text class="m" x="100.0" y="141.0" text-anchor="middle">binary protocols</text><text class="m" x="100.0" y="156.0" text-anchor="middle">over TCP/IP</text><rect class="ac" x="230" y="30" width="210" height="120" rx="8"/><text class="t" x="335.0" y="73.0" text-anchor="middle">RTMon TCP server (C#)</text><text class="m" x="335.0" y="91.0" text-anchor="middle">per-brand protocol parsers</text><text class="m" x="335.0" y="106.0" text-anchor="middle">parameter mapping</text><text class="m" x="335.0" y="121.0" text-anchor="middle">alarm detection</text><rect class="ac" x="230" y="190" width="210" height="90" rx="8"/><text class="t" x="335.0" y="225.0" text-anchor="middle">Session service</text><text class="m" x="335.0" y="243.0" text-anchor="middle">token authentication</text><text class="m" x="335.0" y="258.0" text-anchor="middle">reconnect and push</text><rect class="bx" x="490" y="40" width="160" height="70" rx="8"/><text class="t" x="570.0" y="72.0" text-anchor="middle">MongoDB</text><text class="m" x="570.0" y="90.0" text-anchor="middle">raw frame archive</text><rect class="bx" x="472" y="190" width="200" height="90" rx="8"/><text class="t" x="572.0" y="232.0" text-anchor="middle">SignalR / WebSocket hub</text><text class="m" x="572.0" y="250.0" text-anchor="middle">live parameter stream</text><rect class="bx" x="700" y="20" width="180" height="66" rx="8"/><text class="t" x="790.0" y="50.0" text-anchor="middle">RTMon Viewer (React)</text><text class="m" x="790.0" y="68.0" text-anchor="middle">unit overview, live cards</text><rect class="bx" x="700" y="120" width="180" height="66" rx="8"/><text class="t" x="790.0" y="143.0" text-anchor="middle">D.Sys treatment screen</text><text class="m" x="790.0" y="161.0" text-anchor="middle">TFU parameters into</text><text class="m" x="790.0" y="176.0" text-anchor="middle">daily treatment</text><rect class="bx" x="700" y="220" width="180" height="66" rx="8"/><text class="t" x="790.0" y="250.0" text-anchor="middle">Alarms and push</text><text class="m" x="790.0" y="268.0" text-anchor="middle">machine warnings, errors</text><line class="ln" x1="180" y1="125" x2="230" y2="100" marker-end="url(#a)"/><text class="m" x="200" y="98" text-anchor="middle">TCP</text><line class="ln" x1="440" y1="75" x2="490" y2="75" marker-end="url(#a)"/><line class="ln" x1="335" y1="150" x2="335" y2="190" marker-end="url(#a)"/><line class="ln" x1="440" y1="235" x2="472" y2="235" marker-end="url(#a)"/><line class="ln" x1="672" y1="215" x2="700" y2="62" marker-end="url(#a)"/><line class="ln" x1="672" y1="233" x2="700" y2="158" marker-end="url(#a)"/><line class="ln" x1="672" y1="252" x2="700" y2="253" marker-end="url(#a)"/></svg></div>
+    <div class="mlabel">Screens</div>
+    <div class="screens"><div class="track"><figure><a href="img/rtmon-live.png" target="_blank" rel="noopener"><img src="img/rtmon-live.png" alt="Live treatment view: pressures, flows, Kt/V"></a><figcaption>Live treatment view: pressures, flows, Kt/V</figcaption></figure><figure><a href="img/rtmon-overview.png" target="_blank" rel="noopener"><img src="img/rtmon-overview.png" alt="Unit overview: every machine, live"></a><figcaption>Unit overview: every machine, live</figcaption></figure></div><button class="prev" aria-label="Previous">‹</button><button class="next" aria-label="Next">›</button></div>
+  </div>
+  <div class="feature">
+    <div class="shot">img/dialine.png<img src="img/dialine.png" alt="DiaLINE — clinical and enterprise management platform" onerror="this.remove()"></div>
+    <div>
+      <span class="status">2010 – 2023 · Live for 13 years</span>
+      <h3>DiaLINE — clinical and enterprise management platform</h3>
+      <p>One platform for dialysis clinics, with clinical and corporate modules side by side.</p>
+      <div class="scale">53 clinics · 19 cities · 9,000+ patients · 1,300 staff · 1.35M+ sessions a year</div><div class="tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>jQuery</span><span>SOAP</span><span>WSSE</span><span>C#</span><span>Java (XAdES-BES)</span></div>
+    </div>
+    <div class="mlabel">Modules</div>
+    <div class="modules"><div><b>Clinical</b><span>patient records, treatment, Ministry of Health and e-Nabız integration, 7 laboratory systems, e-prescription signing</span></div><div><b>Billing and revenue</b><span>SGK (social security) e-billing</span></div><div><b>Workforce</b><span>employee management, HR records, fingerprint-based time tracking, shift planning, payroll calculation</span></div><div><b>Performance</b><span>KPI management and productivity reporting</span></div><div><b>Event tracking</b><span>operational events logged and followed up</span></div><div><b>Monthly monitoring</b><span>labs, session and machine data on one screen</span></div></div>
+  </div>
+  <div class="feature">
+    <div class="shot diagram"><svg viewBox="0 0 640 360" role="img" aria-label="Card management architecture" xmlns="http://www.w3.org/2000/svg"><defs><marker id="a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs><rect class="bx" x="40" y="40" width="170" height="70" rx="8"/><text class="t" x="125.0" y="72.0" text-anchor="middle">Blazor UI</text><text class="m" x="125.0" y="90.0" text-anchor="middle">live card status</text><rect class="ac" x="235" y="140" width="170" height="80" rx="8"/><text class="t" x="320.0" y="177.0" text-anchor="middle">.NET server</text><text class="m" x="320.0" y="195.0" text-anchor="middle">EF Core · SignalR</text><rect class="bx" x="430" y="40" width="170" height="70" rx="8"/><text class="t" x="515.0" y="72.0" text-anchor="middle">SQL database</text><text class="m" x="515.0" y="90.0" text-anchor="middle">cards, holders</text><rect class="bx" x="235" y="270" width="170" height="60" rx="8"/><text class="t" x="320.0" y="297.0" text-anchor="middle">Card reader / writer</text><text class="m" x="320.0" y="315.0" text-anchor="middle">RFID</text><rect class="bx" x="40" y="250" width="170" height="60" rx="8"/><text class="t" x="125.0" y="277.0" text-anchor="middle">Operators</text><text class="m" x="125.0" y="295.0" text-anchor="middle">issue · revoke</text><line class="ln" x1="125" y1="110" x2="265" y2="145" marker-end="url(#a)" marker-start="url(#a)"/><text class="m" x="170" y="112" text-anchor="middle">SignalR</text><line class="ln" x1="405" y1="160" x2="515" y2="112" marker-end="url(#a)" marker-start="url(#a)"/><text class="m" x="500" y="150" text-anchor="middle">EF Core</text><line class="ln" x1="320" y1="220" x2="320" y2="270" marker-end="url(#a)" marker-start="url(#a)"/><text class="m" x="385" y="250" text-anchor="middle">reader events</text><line class="ln" x1="125" y1="250" x2="255" y2="215" marker-end="url(#a)" marker-start="url(#a)"/></svg></div>
+    <div>
+      <span class="status">2023 – 2025</span>
+      <h3>Card management platform</h3>
+      <p>Smart-card management web application with card-reader integration and real-time updates.</p>
+      <div class="tags"><span>Blazor</span><span>C#</span><span>EF Core</span><span>SignalR</span><span>RFID</span></div>
+    </div>
+    <div class="mlabel">Modules</div>
+    <div class="modules"><div><b>Card registry</b><span>cards and holders; issue, renew, revoke</span></div><div><b>Reader integration</b><span>RFID reader/writer</span></div><div><b>Live status</b><span>SignalR updates across all clients</span></div></div>
+  </div>
+  <div class="feature">
+    <div class="shot diagram"><svg viewBox="0 0 640 360" role="img" aria-label="Document management architecture" xmlns="http://www.w3.org/2000/svg"><defs><marker id="a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs><rect class="bx" x="30" y="30" width="150" height="60" rx="8"/><text class="t" x="105.0" y="57.0" text-anchor="middle">React web</text><text class="m" x="105.0" y="75.0" text-anchor="middle">viewers, templates</text><rect class="bx" x="30" y="130" width="150" height="60" rx="8"/><text class="t" x="105.0" y="157.0" text-anchor="middle">React Native</text><text class="m" x="105.0" y="175.0" text-anchor="middle">mobile client</text><rect class="bx" x="30" y="230" width="150" height="60" rx="8"/><text class="t" x="105.0" y="257.0" text-anchor="middle">Office / PDF</text><text class="m" x="105.0" y="275.0" text-anchor="middle">in-browser viewers</text><rect class="ac" x="245" y="110" width="150" height="100" rx="8"/><text class="t" x="320.0" y="150.0" text-anchor="middle">Node + Express</text><text class="m" x="320.0" y="168.0" text-anchor="middle">auth · versioning</text><text class="m" x="320.0" y="183.0" text-anchor="middle">messaging</text><rect class="bx" x="460" y="60" width="150" height="60" rx="8"/><text class="t" x="535.0" y="87.0" text-anchor="middle">MongoDB</text><text class="m" x="535.0" y="105.0" text-anchor="middle">metadata, versions</text><rect class="bx" x="460" y="200" width="150" height="60" rx="8"/><text class="t" x="535.0" y="227.0" text-anchor="middle">File storage</text><text class="m" x="535.0" y="245.0" text-anchor="middle">document files</text><line class="ln" x1="180" y1="60" x2="245" y2="140" marker-end="url(#a)" marker-start="url(#a)"/><line class="ln" x1="180" y1="160" x2="245" y2="160" marker-end="url(#a)" marker-start="url(#a)"/><line class="ln" x1="180" y1="260" x2="245" y2="185" marker-end="url(#a)" marker-start="url(#a)"/><line class="ln" x1="395" y1="150" x2="460" y2="100" marker-end="url(#a)" marker-start="url(#a)"/><line class="ln" x1="395" y1="175" x2="460" y2="225" marker-end="url(#a)" marker-start="url(#a)"/></svg></div>
+    <div>
+      <span class="status">2021 – 2023</span>
+      <h3>Document management system</h3>
+      <p>File management for healthcare companies, with web and mobile clients.</p>
+      <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>React Native</span></div>
+    </div>
+    <div class="mlabel">Modules</div>
+    <div class="modules"><div><b>Clients</b><span>web and mobile (React Native)</span></div><div><b>Access and versioning</b><span>authenticated access, full version history</span></div><div><b>In-browser viewers</b><span>Office and PDF without downloading</span></div><div><b>Templates</b><span>reusable document templates</span></div><div><b>Messaging</b><span>in-app messaging around documents</span></div></div>
+  </div>
+</div></section>
+
+<section id="ai"><div class="wrap">
+  <div class="eyebrow">AI &amp; ML</div>
+  <h2>AI features inside those products</h2>
+  <p class="sub">Where machine learning, speech or agents solved a real problem, I built it in. These sit on top of the platform work, not instead of it.</p>
+
+  <div class="feature">
+    <div class="shot">img/fssc-board.png<img src="img/fssc-board.png" alt="FS-SC — Jira board with the live agent run" onerror="this.remove()"></div>
+    <div>
+      <span class="status">Personal · Active · 2026</span>
+      <h3>FS-SC — MCP-coordinated software company</h3>
+      <p>An MCP server runs a 12-role software team through a 10-phase development cycle: it hands each step to the connected client, verifies every delivery, opens fix rounds, commits, runs QA and Playwright E2E, and shows all of it on a live dashboard. The screens show a real run: 293 tasks over 18 sprints.</p>
+      <p class="repo">Open source · <a href="https://github.com/ferhatbas/fssc-mcp" target="_blank" rel="noopener">github.com/ferhatbas/fssc-mcp ↗</a></p>
+      <div class="tags"><span>Python</span><span>FastAPI</span><span>MCP SDK</span><span>WebSocket</span><span>React Flow</span><span>Tailwind</span><span>Playwright</span><span>pytest</span></div>
+    </div>
+    <div class="mlabel">Modules</div>
+    <div class="modules"><div><b>Pipeline coordinator</b><span>MCP server with a state machine: start run, next step, submit result, approval gate</span></div><div><b>12 agent roles</b><span>PM, PO, architect, backend, frontend, QA, E2E tester, DevOps, reporter, documentor, SCM, scrum master</span></div><div><b>10-phase task cycle</b><span>PRD → architecture → backend and client scaffolds → backlog tasks → QA → E2E → DevOps → UAT → docs</span></div><div><b>Verification and fix rounds</b><span>syntax, install, lint, build and test commands run after every delivery; failures reopen the task</span></div><div><b>SCM integration</b><span>passing deliveries committed as feat/fix per Jira item</span></div><div><b>Deliberation room</b><span>agents debate alternative plans; the manager approves the final decision</span></div><div><b>Playwright E2E</b><span>the app is started, health-checked and tested in a real browser with a screenshot gallery</span></div><div><b>Live dashboard</b><span>Jira tree and Kanban, agent mesh topology, sprint reports (burndown, velocity, CFD), approval strip</span></div><div><b>Execution engine</b><span>no API key: Claude Desktop, Claude Code or Antigravity generate each step with their own model</span></div></div>
+    <div class="mlabel">Architecture</div>
+    <div class="arch arch-sq"><svg viewBox="0 0 640 360" role="img" aria-label="FS-SC architecture" xmlns="http://www.w3.org/2000/svg"><defs><marker id="a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs><rect class="bx" x="20" y="120" width="150" height="100" rx="8"/><text class="t" x="95.0" y="167.0" text-anchor="middle">Claude Desktop / Code</text><text class="m" x="95.0" y="185.0" text-anchor="middle">execution engine</text><rect class="ac" x="250" y="100" width="160" height="140" rx="8"/><text class="t" x="330.0" y="153.0" text-anchor="middle">MCP server</text><text class="m" x="330.0" y="171.0" text-anchor="middle">coordinator</text><text class="m" x="330.0" y="186.0" text-anchor="middle">state machine</text><text class="m" x="330.0" y="201.0" text-anchor="middle">approval flow</text><rect class="bx" x="490" y="30" width="130" height="56" rx="8"/><text class="t" x="555.0" y="55.0" text-anchor="middle">12 roles</text><text class="m" x="555.0" y="73.0" text-anchor="middle">PM · Architect · QA</text><rect class="bx" x="490" y="152" width="130" height="56" rx="8"/><text class="t" x="555.0" y="177.0" text-anchor="middle">Task cycle</text><text class="m" x="555.0" y="195.0" text-anchor="middle">10 verified steps</text><rect class="bx" x="490" y="274" width="130" height="56" rx="8"/><text class="t" x="555.0" y="299.0" text-anchor="middle">Dashboard</text><text class="m" x="555.0" y="317.0" text-anchor="middle">React Flow · WebSocket</text><line class="ln" x1="170" y1="170" x2="250" y2="170" marker-end="url(#a)" marker-start="url(#a)"/><line class="ln" x1="410" y1="150" x2="490" y2="66" marker-end="url(#a)" marker-start="url(#a)"/><line class="ln" x1="410" y1="170" x2="490" y2="180" marker-end="url(#a)" marker-start="url(#a)"/><line class="ln" x1="410" y1="200" x2="490" y2="296" marker-end="url(#a)" marker-start="url(#a)"/></svg></div>
+    <div class="mlabel">Screens</div>
+    <div class="screens"><div class="track"><figure><a href="img/fssc-kanban.png" target="_blank" rel="noopener"><img src="img/fssc-kanban.png" alt="Kanban: backlog, selected, in progress (agent), QA handshake, done"></a><figcaption>Kanban: backlog, selected, in progress (agent), QA handshake, done</figcaption></figure><figure><a href="img/fssc-mesh.png" target="_blank" rel="noopener"><img src="img/fssc-mesh.png" alt="Agent mesh: 12 roles as a live topology with their current step"></a><figcaption>Agent mesh: 12 roles as a live topology with their current step</figcaption></figure><figure><a href="img/fssc-reports.png" target="_blank" rel="noopener"><img src="img/fssc-reports.png" alt="Sprint reports: burndown, velocity, burnup and cumulative flow"></a><figcaption>Sprint reports: burndown, velocity, burnup and cumulative flow</figcaption></figure><figure><a href="img/fssc-deliberation.png" target="_blank" rel="noopener"><img src="img/fssc-deliberation.png" alt="Deliberation room: alternative plans, rounds and the final decision"></a><figcaption>Deliberation room: alternative plans, rounds and the final decision</figcaption></figure><figure><a href="img/fssc-e2e.png" target="_blank" rel="noopener"><img src="img/fssc-e2e.png" alt="Playwright E2E centre: test templates, run log and screenshot gallery"></a><figcaption>Playwright E2E centre: test templates, run log and screenshot gallery</figcaption></figure></div><button class="prev" aria-label="Previous">‹</button><button class="next" aria-label="Next">›</button></div>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <div class="shot diagram"><svg viewBox="0 0 640 360" role="img" aria-label="MedDikte workflow" xmlns="http://www.w3.org/2000/svg"><defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs><rect class="bx" x="15" y="60" width="110" height="64" rx="8"/><text class="t" x="70.0" y="89.0" text-anchor="middle">Doctor</text><text class="m" x="70.0" y="107.0" text-anchor="middle">speaks</text><rect class="bx" x="160" y="60" width="120" height="64" rx="8"/><text class="t" x="220.0" y="89.0" text-anchor="middle">Desktop overlay</text><text class="m" x="220.0" y="107.0" text-anchor="middle">Tauri · Rust</text><rect class="ac" x="315" y="60" width="130" height="64" rx="8"/><text class="t" x="380.0" y="89.0" text-anchor="middle">ASR backend</text><text class="m" x="380.0" y="107.0" text-anchor="middle">faster-whisper</text><rect class="bx" x="480" y="60" width="145" height="64" rx="8"/><text class="t" x="552.5" y="89.0" text-anchor="middle">Hallucination shield</text><text class="m" x="552.5" y="107.0" text-anchor="middle">4 layers</text><line class="ln" x1="125" y1="92" x2="160" y2="92" marker-end="url(#a)"/><line class="ln" x1="280" y1="92" x2="315" y2="92" marker-end="url(#a)"/><line class="ln" x1="445" y1="92" x2="480" y2="92" marker-end="url(#a)"/><rect class="bx" x="480" y="200" width="145" height="64" rx="8"/><text class="t" x="552.5" y="229.0" text-anchor="middle">Doctor approval</text><text class="m" x="552.5" y="247.0" text-anchor="middle">required before save</text><line class="ln" x1="552" y1="124" x2="552" y2="200" marker-end="url(#a)"/><rect class="bx" x="315" y="200" width="130" height="64" rx="8"/><text class="t" x="380.0" y="229.0" text-anchor="middle">Clinical record</text><text class="m" x="380.0" y="247.0" text-anchor="middle">no cloud, on-prem</text><line class="ln" x1="480" y1="232" x2="445" y2="232" marker-end="url(#a)"/><rect class="bx" x="15" y="290" width="200" height="56" rx="8"/><text class="t" x="115.0" y="315.0" text-anchor="middle">LoRA trainer</text><text class="m" x="115.0" y="333.0" text-anchor="middle">PyTorch · fine-tuning</text><rect class="bx" x="250" y="290" width="190" height="56" rx="8"/><text class="t" x="345.0" y="315.0" text-anchor="middle">Evaluation</text><text class="m" x="345.0" y="333.0" text-anchor="middle">WER / MER</text><rect class="bx" x="475" y="290" width="150" height="56" rx="8"/><text class="t" x="550.0" y="315.0" text-anchor="middle">Model update</text><text class="m" x="550.0" y="333.0" text-anchor="middle">CTranslate2</text><line class="ln" x1="215" y1="318" x2="250" y2="318" marker-end="url(#a)"/><line class="ln" x1="440" y1="318" x2="475" y2="318" marker-end="url(#a)"/><line class="ln ds" x1="550" y1="290" x2="380" y2="124" marker-end="url(#a)"/></svg></div>
+      <div class="body"><span class="status">Production ready</span><h3>MedDikte</h3>
+        <p>Offline medical dictation with a four-layer hallucination shield and a LoRA fine-tuning pipeline measured by WER / MER.</p>
+        <div class="tags"><span>Tauri / Rust</span><span>FastAPI</span><span>faster-whisper</span><span>PyTorch LoRA</span></div></div>
+    </article>
+    <article class="card">
+      <div class="shot diagram"><svg viewBox="0 0 640 360" role="img" aria-label="Anemia-API workflow" xmlns="http://www.w3.org/2000/svg"><defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs><rect class="bx" x="20" y="50" width="170" height="70" rx="8"/><text class="t" x="105.0" y="82.0" text-anchor="middle">Lab values</text><text class="m" x="105.0" y="100.0" text-anchor="middle">Hb, ferritin, TSAT, dose</text><rect class="ac" x="235" y="50" width="170" height="70" rx="8"/><text class="t" x="320.0" y="82.0" text-anchor="middle">REST API</text><text class="m" x="320.0" y="100.0" text-anchor="middle">Node.js · TypeScript</text><rect class="bx" x="450" y="50" width="170" height="70" rx="8"/><text class="t" x="535.0" y="82.0" text-anchor="middle">Validation</text><text class="m" x="535.0" y="100.0" text-anchor="middle">OpenAPI schema</text><line class="ln" x1="190" y1="85" x2="235" y2="85" marker-end="url(#a)"/><line class="ln" x1="405" y1="85" x2="450" y2="85" marker-end="url(#a)"/><rect class="ac" x="450" y="150" width="170" height="70" rx="8"/><text class="t" x="535.0" y="182.0" text-anchor="middle">TensorFlow.js model</text><text class="m" x="535.0" y="200.0" text-anchor="middle">trained in-house</text><line class="ln" x1="535" y1="120" x2="535" y2="150" marker-end="url(#a)"/><rect class="bx" x="235" y="150" width="170" height="70" rx="8"/><text class="t" x="320.0" y="182.0" text-anchor="middle">Dose recommendation</text><text class="m" x="320.0" y="200.0" text-anchor="middle">ESA + iron</text><line class="ln" x1="450" y1="185" x2="405" y2="185" marker-end="url(#a)"/><rect class="bx" x="20" y="150" width="170" height="70" rx="8"/><text class="t" x="105.0" y="182.0" text-anchor="middle">Clinician</text><text class="m" x="105.0" y="200.0" text-anchor="middle">reviews, decides</text><line class="ln" x1="235" y1="185" x2="190" y2="185" marker-end="url(#a)"/><rect class="bx" x="235" y="270" width="170" height="60" rx="8"/><text class="t" x="320.0" y="297.0" text-anchor="middle">MongoDB</text><text class="m" x="320.0" y="315.0" text-anchor="middle">requests, outcomes</text><line class="ln" x1="320" y1="220" x2="320" y2="270" marker-end="url(#a)"/><rect class="bx" x="450" y="270" width="170" height="60" rx="8"/><text class="t" x="535.0" y="297.0" text-anchor="middle">Retraining</text><text class="m" x="535.0" y="315.0" text-anchor="middle">new data, new model</text><line class="ln" x1="405" y1="300" x2="450" y2="300" marker-end="url(#a)"/><line class="ln ds" x1="535" y1="270" x2="535" y2="220" marker-end="url(#a)"/></svg></div>
+      <div class="body"><span class="status">Production ready</span><h3>Anemia-API</h3>
+        <p>An in-house model that recommends ESA and iron dosage from hemoglobin and iron levels. Training and serving live in one service: data processing, model training and a documented prediction API.</p>
+        <div class="tags"><span>Node.js</span><span>TypeScript</span><span>TensorFlow.js</span><span>MongoDB</span></div></div>
+    </article>
+    <article class="card">
+      <div class="shot diagram"><svg viewBox="0 0 640 360" role="img" aria-label="Voice assistant workflow" xmlns="http://www.w3.org/2000/svg"><defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs><rect class="bx" x="15" y="40" width="120" height="64" rx="8"/><text class="t" x="75.0" y="69.0" text-anchor="middle">Clinician</text><text class="m" x="75.0" y="87.0" text-anchor="middle">Turkish speech</text><rect class="ac" x="175" y="40" width="130" height="64" rx="8"/><text class="t" x="240.0" y="69.0" text-anchor="middle">Wake word</text><text class="m" x="240.0" y="87.0" text-anchor="middle">Porcupine</text><rect class="bx" x="345" y="40" width="130" height="64" rx="8"/><text class="t" x="410.0" y="69.0" text-anchor="middle">Web Audio</text><text class="m" x="410.0" y="87.0" text-anchor="middle">mic capture</text><rect class="bx" x="515" y="40" width="110" height="64" rx="8"/><text class="t" x="570.0" y="69.0" text-anchor="middle">Gemini Live</text><text class="m" x="570.0" y="87.0" text-anchor="middle">intent</text><line class="ln" x1="135" y1="72" x2="175" y2="72" marker-end="url(#a)"/><line class="ln" x1="305" y1="72" x2="345" y2="72" marker-end="url(#a)"/><line class="ln" x1="475" y1="72" x2="515" y2="72" marker-end="url(#a)"/><rect class="bx" x="515" y="170" width="110" height="64" rx="8"/><text class="t" x="570.0" y="199.0" text-anchor="middle">Command</text><text class="m" x="570.0" y="217.0" text-anchor="middle">mapping</text><line class="ln" x1="570" y1="104" x2="570" y2="170" marker-end="url(#a)"/><rect class="ac" x="300" y="170" width="175" height="64" rx="8"/><text class="t" x="387.5" y="199.0" text-anchor="middle">Embedded widget</text><text class="m" x="387.5" y="217.0" text-anchor="middle">React 19 · Shadow DOM</text><line class="ln" x1="515" y1="202" x2="475" y2="202" marker-end="url(#a)"/><rect class="bx" x="15" y="170" width="230" height="64" rx="8"/><text class="t" x="130.0" y="199.0" text-anchor="middle">DiaLINE clinical UI</text><text class="m" x="130.0" y="217.0" text-anchor="middle">fills fields, opens screens</text><line class="ln" x1="300" y1="202" x2="245" y2="202" marker-end="url(#a)"/><rect class="bx" x="15" y="285" width="230" height="50" rx="8"/><text class="t" x="130.0" y="307.0" text-anchor="middle">Spoken confirmation</text><text class="m" x="130.0" y="325.0" text-anchor="middle">text-to-speech reply</text><line class="ln" x1="130" y1="234" x2="130" y2="285" marker-end="url(#a)"/><line class="ln ds" x1="245" y1="310" x2="300" y2="230" marker-end="url(#a)"/></svg></div>
+      <div class="body"><span class="status">In production</span><h3>Clinical Voice Assistant</h3>
+        <p>Turkish voice commands embedded in a clinical decision-support system, later rebuilt as an embeddable widget with wake-word detection.</p>
+        <div class="tags"><span>React 19</span><span>Gemini Live</span><span>Web Audio</span><span>Porcupine</span></div></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <div class="eyebrow">Experience</div>
+  <h2>Where I have worked</h2>
+  <div class="timeline" style="margin-top:24px">
+    <div class="job"><time>2023 – 2026</time><div><h3>Lead Software Engineer &amp; IT Manager · DMED Software</h3>
+      <p>Led development and IT operations for the clinical platform. Built RTMon, D.Sys HMS and the card management platform.</p></div></div>
+    <div class="job"><time>2016 – 2023</time><div><h3>Lead Software Engineer &amp; IT Manager · DMED Dialysis</h3>
+      <p>Owned software, infrastructure and security. Management representative for ISO 27001 and ISO 15504 (SPICE).</p></div></div>
+    <div class="job"><time>2011 – 2016</time><div><h3>Software Developer · Diaverum</h3>
+      <p>Clinical and e-billing systems integrated with the Ministry of Health and laboratory systems.</p></div></div>
+    <div class="job"><time>2005 – 2011</time><div><h3>Senior Software Developer · Dokuz Eylül University</h3>
+      <p>Built Nefroliz, a C++ desktop dialysis clinical information system (hemodialysis, peritoneal dialysis and transplantation modules, e-billing, lab integration), plus academic and healthcare web applications with Java and Oracle PL/SQL.</p></div></div>
+  </div>
+  <div class="skills" style="margin-top:44px">
+    <div><h3>Frontend</h3><p>React, Next.js, TypeScript, jQuery, Tailwind, PrimeReact, Blazor</p></div>
+    <div><h3>Backend</h3><p>C# / .NET, EF Core, Node.js, PHP, Laravel, Symfony, Doctrine</p></div>
+    <div><h3>Real-time</h3><p>WebSocket, SignalR, TCP/IP binary protocols, HL7, FHIR R4</p></div>
+    <div><h3>AI &amp; ML</h3><p>TensorFlow.js, PyTorch / LoRA, faster-whisper, local LLMs, Gemini Live</p></div>
+    <div><h3>Data &amp; DevOps</h3><p>MSSQL, MySQL, MongoDB, PostgreSQL, Docker, Azure, CI/CD</p></div>
+    <div><h3>Embedded</h3><p>C/C++, ESP32 / ESP-IDF, NXP, Azure RTOS</p></div>
+  </div>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+  <div class="eyebrow">Contact</div>
+  <h2>Open to remote lead and senior full-stack roles.</h2>
+  <div class="cta">
+    <a class="btn primary" href="mailto:ferhatbas1981@gmail.com">ferhatbas1981@gmail.com</a>
+    <a class="btn" href="https://www.linkedin.com/in/ferhat-bas/">LinkedIn</a>
+    <a class="btn" href="https://github.com/ferhatbas">GitHub</a>
+  </div>
+  <small>© 2026 Ferhat Baş</small>
+</div></footer>
+
+<script>
+document.querySelectorAll('.screens').forEach(function(s){
+  var t=s.querySelector('.track');
+  s.querySelector('.prev').onclick=function(){t.scrollBy({left:-t.clientWidth*.72,behavior:'smooth'})};
+  s.querySelector('.next').onclick=function(){t.scrollBy({left:t.clientWidth*.72,behavior:'smooth'})};
+});
+</script>
+<script data-goatcounter="https://ferhatbas.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
